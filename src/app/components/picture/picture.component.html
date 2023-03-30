@@ -1,0 +1,9 @@
+<ng-container *ngIf="shouldLoad">
+    <div class="picture-container">
+        <img src="{{imageURL}}">
+        <span [ngClass]="['picture-overlay', isMobileDevice ? 'picture-overlay-mobile' : 'picture-overlay-desktop']"
+            [ngStyle]="{'color': showDarkTitle ? 'black' : 'white'}">
+            {{imageTitle}}
+        </span>
+    </div>
+</ng-container>

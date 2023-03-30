@@ -1,0 +1,23 @@
+<!-- Search bar -->
+<div class="centered-content display-on-top">
+    <label for="searchKey" style="align-self: center; padding-right:1rem;">Search by title: </label>
+    <input type="text" id="searchKey" class="search-bar" (keyup)="searchKeyChanged($event)">
+</div>
+<!-- Grid -->
+<div class="parent">
+    <div [ngClass]="[ 'container', isMobileDevice ? 'container-mobile' : 'container-desktop']">
+        <app-picture *ngFor="let item of pictureListToDisplay; trackBy: trackByFn" [picture]="item"
+            [isMobileDevice]="isMobileDevice">
+        </app-picture>
+        <br>
+    </div>
+</div>
+<!-- Button for showing more results -->
+<div class="centered-content">
+    <button type="button" (click)="loadPictures()" [disabled]="loading || !hasNextPage">Show more</button>
+</div>
+<!-- User information -->
+<div class="centered-content">
+    <span *ngIf="loading">Loading ...</span>
+    <span *ngIf="error">Server error. Please try again.</span>
+</div>

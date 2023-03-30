@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/picture-grid-ds",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

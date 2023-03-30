@@ -1,0 +1,53 @@
+@import "../../constants";
+
+ .parent{
+    display: flex;
+  }
+
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .centered-content{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .display-on-top{
+    position: sticky;
+    top: 0px;
+    background-color:white;
+    z-index: 1;
+  }
+
+  .search-bar{
+    width: 50%;
+  }
+
+@supports(display:grid){
+  .parent{
+    display: grid;
+  }
+  
+  .container {
+      display: grid;
+      justify-content: center;
+      // justify-content: space-evenly;
+    }
+  
+    .container-mobile{
+      grid-template-columns: repeat(auto-fit, minmax($image-size-mobile, $image-size-mobile));
+      grid-row-gap: 5px;
+      grid-column-gap: 5px;
+    }
+  
+    .container-desktop{
+      grid-template-columns: repeat(auto-fit, minmax($image-size-desktop, $image-size-desktop));
+      grid-row-gap: 10px;
+      grid-column-gap: 10px;
+    }
+}
+

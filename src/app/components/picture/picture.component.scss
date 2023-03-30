@@ -1,0 +1,23 @@
+@import "../../constants";
+
+.picture-container{
+  display: flex;
+  justify-content: center;
+}
+
+.picture-overlay{
+    position: absolute;
+    word-break: break-word;
+    text-align: center;
+}
+
+.picture-overlay-mobile{
+  width: $image-size-mobile;
+  padding: 1rem;
+  font-size: smaller;
+}
+
+.picture-overlay-desktop{
+  width: $image-size-desktop;
+  padding-top: 1.5rem;
+}
